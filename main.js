@@ -8,10 +8,12 @@ for (let key of keys) {
   const value = key.dataset.key;
 
   key.addEventListener("click", () => {
+
     if (value == "clear") {
       input = "";
       display_input.innerHTML = "";
       display_output.innerHTML = "";
+
     } else if (value == "backspace") {
       input = input.slice(0, -1);
       display_input.innerHTML = cleanInput(input);
@@ -84,7 +86,7 @@ function cleanOutput(output) {
 
   if (decimal) {
     outputArray.push(".");
-    outputArray.push(".");
+    outputArray.push(decimal);
   }
 
   return outputArray.join("");
